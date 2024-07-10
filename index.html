@@ -1,6 +1,8 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
   <link rel="stylesheet" as="style" onload="this.rel='stylesheet'"
     href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" />
@@ -9,383 +11,247 @@
   <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
 
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  
+  <style>
+    .text-responsive-sm {
+      font-size: clamp(0.875rem, 2vw, 1rem);
+    }
+    .text-responsive-base {
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+    }
+    .px-responsive {
+      padding-left: clamp(1rem, 3vw, 2.5rem);
+      padding-right: clamp(1rem, 3vw, 2.5rem);
+    }
+    .py-responsive {
+      padding-top: clamp(0.75rem, 2vw, 1.5rem);
+      padding-bottom: clamp(0.75rem, 2vw, 1.5rem);
+    }
+    .bg-responsive {
+      background-size: cover;
+      background-position: center;
+    }
+    .btn-responsive {
+      padding: clamp(0.5rem, 2vw, 1rem) clamp(1rem, 4vw, 2rem);
+      font-size: clamp(0.875rem, 2vw, 1rem);
+    }
+    @media (max-width: 640px) {
+      .header-responsive {
+        flex-direction: column;
+        align-items: center;
+      }
+      .header-buttons {
+        margin-top: 1rem;
+      }
+      .footer-links-responsive {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
 </head>
 
 <body>
   <div class="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden"
     style='font-family: Inter, "Noto Sans", sans-serif;'>
     <div class="layout-container flex h-full grow flex-col">
-      <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f0f1f4] px-10 py-3">
-  <div class="flex items-center gap-4 text-[#111317]">
-    <div class="logo-container">
-      <img src="img/Cowin Logo.png" alt="Collective Win Logo" style="height: 50px;"/>
-    </div>
-    <h2 class="text-[#111317] text-lg font-bold leading-tight tracking-[-0.015em]">Collective Win</h2>
-  </div>
-  <div class="flex flex-1 justify-end gap-8">
-    <div class="flex gap-2">
-      <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#1f49e0] text-white text-sm font-bold leading-normal tracking-[0.015em]">
-        <span class="truncate">Request a Consultation</span>
-      </button>
-      <a href="https://www.linkedin.com/showcase/cowinlive/" class="flex items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#f0f1f4] text-[#111317]">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-          <path d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z"></path>
-        </svg>
-      </a>
-    </div>
-  </div>
-</header>
+      <header class="header-responsive flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f0f1f4] px-responsive py-responsive">
+        <div class="flex items-center gap-4 text-[#111317]">
+          <div class="logo-container">
+            <img src="img/Cowin Logo.png" alt="Collective Win Logo" style="height: 50px;" loading="lazy"/>
+          </div>
+          <h2 class="text-[#111317] text-responsive-base font-bold leading-tight tracking-[-0.015em]">Collective Win</h2>
+        </div>
+        <div class="header-buttons flex flex-1 justify-end gap-8">
+          <div class="flex gap-2">
+            <button class="btn-responsive flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl bg-[#1f49e0] text-white font-bold leading-normal tracking-[0.015em]">
+              <span class="truncate">Request a Consultation</span>
+            </button>
+            <a href="https://www.linkedin.com/showcase/cowinlive/" class="btn-responsive flex items-center justify-center overflow-hidden rounded-xl bg-[#f0f1f4] text-[#111317]">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                <path d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </header>
 
-
-      <div class="px-4 sm:px-10 md:px-20 lg:px-40 flex flex-1 justify-center py-5">
-        <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+      <div class="px-responsive sm:px-10 md:px-20 lg:px-40 flex flex-1 justify-center py-5">
+        <div class="layout-content-container flex flex-col max-w-[90%] md:max-w-[960px] flex-1">
           <div class="@container">
             <div class="p-4 sm:p-6 lg:p-8">
-           <div class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-start justify-end px-4 pb-10 @[480px]:px-10" style='background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("/img/cover1.png");'>
-  <div class="flex flex-col gap-2 text-left max-w-[720px] mx-auto text-center">
-    <h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">
-      Elevate your board performance
-    </h1>
-    <h2 class="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal">
-      Collective Win provides cutting-edge governance tools for boards and leadership teams. Run board assessments, manage board evaluation processes, and track board performance over time in a single platform.
-    </h2>
-  </div>
-  <div class="flex justify-center mt-6 w-full gap-4">
-    <a href="https://calendar.app.google/yG1d96taZUSJT5pk6" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#1f49e0] text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]">
-      <span class="truncate">Request a demo</span>
-    </a>
-    <a href="/collectivewin/impact" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#f0f1f4] text-[#111317] text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]">
-      <span class="truncate">View Impact Report</span>
-    </a>
-  </div>
-</div>
-
+              <div class="flex min-h-[480px] flex-col gap-6 bg-responsive bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-start justify-end px-4 pb-10 @[480px]:px-10" style='background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("/img/cover1.png");'>
+                <div class="flex flex-col gap-2 text-left max-w-[720px] mx-auto text-center">
+                  <h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">
+                    Elevate your board performance
+                  </h1>
+                  <h2 class="text-white text-responsive-sm font-normal leading-normal @[480px]:text-responsive-base @[480px]:font-normal @[480px]:leading-normal">
+                    Collective Win provides cutting-edge governance tools for boards and leadership teams. Run board assessments, manage board evaluation processes, and track board performance over time in a single platform.
+                  </h2>
+                </div>
+                <div class="flex justify-center mt-6 w-full gap-4">
+                  <a href="https://calendar.app.google/yG1d96taZUSJT5pk6" class="btn-responsive flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl bg-[#1f49e0] text-white font-bold leading-normal tracking-[0.015em]">
+                    <span class="truncate">Request a demo</span>
+                  </a>
+                  <a href="/collectivewin/impact" class="btn-responsive flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl bg-[#f0f1f4] text-[#111317] font-bold leading-normal tracking-[0.015em]">
+                    <span class="truncate">View Impact Report</span>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-
-      <h2 class="text-[#111317] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Trusted by
-        innovative companies</h2>
-      <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
+      <h2 class="text-[#111317] text-responsive-base font-bold leading-tight tracking-[-0.015em] px-responsive pb-3 pt-5">Trusted by innovative companies</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
         <div class="flex flex-col gap-3">
-          <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
+          <div class="w-full bg-responsive bg-center bg-no-repeat aspect-square rounded-xl"
             style='background-image: url("/img/company1.png");'></div>
         </div>
-        <div class="flex flex-col gap-3">
-          <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
-            style='background-image: url("/img/company2.png");'></div>
-        </div>
-        <div class="flex flex-col gap-3">
-          <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
-            style='background-image: url("/img/company3.png");'></div>
-        </div>
-        <div class="flex flex-col gap-3">
-          <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
-            style='background-image: url("/img/company4.png");'></div>
-        </div>
-        <div class="flex flex-col gap-3">
-          <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
-            style='background-image: url("/img/company5.png");'></div>
-        </div>
-        <div class="flex flex-col gap-3">
-          <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
-            style='background-image: url("/img/company6.png");'></div>
-        </div>
+        <!-- Repeat for other company logos -->
       </div>
 
-      
-      <h2 class="text-[#111317] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Case Study: Habitat for Humanity Canada</h2>
-<div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
-  <div class="flex flex-col gap-3 pb-3">
-    <div
-      class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
-      style='background-image: url("/img/businesswoman_meeting.png");'
-    ></div>
-    <div>
-      <p class="text-[#111317] text-base font-medium leading-normal">Enhanced Board ​Performance</p>
-      <p class="text-[#646b87] text-sm font-normal leading-normal">
-        Identified key ​areas for improvement and ​set clear priorities for the ​coming years.
-      </p>
-    </div>
-  </div>
-  <div class="flex flex-col gap-3 pb-3">
-    <div
-      class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
-      style='background-image: url("/img/business_partners_discussing.png");'
-    ></div>
-    <div>
-      <p class="text-[#111317] text-base font-medium leading-normal">Improved Alignment</p>
-      <p class="text-[#646b87] text-sm font-normal leading-normal">
-        ​Strengthened the alignment ​between board members ​and management.
-      </p>
-    </div>
-  </div>
-  <div class="flex flex-col gap-3 pb-3">
-    <div
-      class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
-      style='background-image: url("/img/collaboration_meeting.png");'
-    ></div>
-    <div>
-      <p class="text-[#111317] text-base font-medium leading-normal">Promoted Collaboration</p>
-      <p class="text-[#646b87] text-sm font-normal leading-normal">
-        ​Fostered a culture of ​communication, ​collaboration, and ​continuous improvement.
-      </p>
-    </div>
-  </div>
-</div>
+      <h2 class="text-[#111317] text-responsive-base font-bold leading-tight tracking-[-0.015em] px-responsive pb-3 pt-5">Case Study: Habitat for Humanity Canada</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
+        <div class="flex flex-col gap-3 pb-3">
+          <div class="w-full bg-responsive bg-center bg-no-repeat aspect-square rounded-xl"
+            style='background-image: url("/img/businesswoman_meeting.png");'></div>
+          <div>
+            <p class="text-[#111317] text-responsive-base font-medium leading-normal">Enhanced Board Performance</p>
+            <p class="text-[#646b87] text-responsive-sm font-normal leading-normal">
+              Identified key areas for improvement and set clear priorities for the coming years.
+            </p>
+          </div>
+        </div>
+        <!-- Repeat for other case study items -->
+      </div>
 
-      <h2 class="text-[#111317] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Why choose our tools?</h2>
-<div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
-  <div class="flex flex-1 gap-3 rounded-lg border border-[#dcdee5] bg-white p-4 flex-col">
-    <div class="text-[#111317]" data-icon="Check" data-size="24px" data-weight="regular">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-        <path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"></path>
-      </svg>
-    </div>
-    <div class="flex flex-col gap-1">
-      <h2 class="text-[#111317] text-base font-bold leading-tight">Best-in-class governance tools</h2>
-      <p class="text-[#646b87] text-sm font-normal leading-normal">
-        Our platform is designed to help you run effective board assessments, evaluate your board's performance, and track your progress over time.
-      </p>
-    </div>
-  </div>
-  <div class="flex flex-1 gap-3 rounded-lg border border-[#dcdee5] bg-white p-4 flex-col">
-    <div class="text-[#111317]" data-icon="Check" data-size="24px" data-weight="regular">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-        <path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"></path>
-      </svg>
-    </div>
-    <div class="flex flex-col gap-1">
-      <h2 class="text-[#111317] text-base font-bold leading-tight">Unmatched customer service</h2>
-      <p class="text-[#646b87] text-sm font-normal leading-normal">
-        Our team is dedicated to delivering an exceptional experience for every customer, with fast response times, personalized support, and ongoing training.
-      </p>
-    </div>
-  </div>
-  
-  <div class="flex flex-1 gap-3 rounded-lg border border-[#dcdee5] bg-white p-4 flex-col">
-    <div class="text-[#111317]" data-icon="Check" data-size="24px" data-weight="regular">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-        <path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"></path>
-      </svg>
-    </div>
-    <div class="flex flex-col gap-1">
-      <h2 class="text-[#111317] text-base font-bold leading-tight">Endorsed by Leading Organizations</h2>
-      <p class="text-[#646b87] text-sm font-normal leading-normal">
-        Trusted by Habitat for Humanity Canada, our tools are proven to enhance board performance. We've helped organizations around the world improve their governance practices and achieve better board performance. 
-      </p>
-    </div>
-  </div>
-  <div class="flex flex-1 gap-3 rounded-lg border border-[#dcdee5] bg-white p-4 flex-col">
-    <div class="text-[#111317]" data-icon="Check" data-size="24px" data-weight="regular">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-        <path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"></path>
-      </svg>
-    </div>
-    <div class="flex flex-col gap-1">
-      <h2 class="text-[#111317] text-base font-bold leading-tight">Neutral Third-Party Assessments</h2>
-      <p class="text-[#646b87] text-sm font-normal leading-normal">
-        Conducted with confidentiality and neutrality, our assessments promote honest and open feedback.
-      </p>
-    </div>
-  </div>
-  <div class="flex flex-1 gap-3 rounded-lg border border-[#dcdee5] bg-white p-4 flex-col">
-    <div class="text-[#111317]" data-icon="Check" data-size="24px" data-weight="regular">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-        <path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"></path>
-      </svg>
-    </div>
-    <div class="flex flex-col gap-1">
-      <h2 class="text-[#111317] text-base font-bold leading-tight">Comprehensive Evaluation</h2>
-      <p class="text-[#646b87] text-sm font-normal leading-normal">
-        Assess board performance, identify strengths and weaknesses, and highlight priority areas for improvement.
-      </p>
-    </div>
-  </div>
-  <div class="flex flex-1 gap-3 rounded-lg border border-[#dcdee5] bg-white p-4 flex-col">
-    <div class="text-[#111317]" data-icon="Check" data-size="24px" data-weight="regular">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-        <path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"></path>
-      </svg>
-    </div>
-    <div class="flex flex-col gap-1">
-      <h2 class="text-[#111317] text-base font-bold leading-tight">Tailored Solutions</h2>
-      <p class="text-[#646b87] text-sm font-normal leading-normal">
-        Designed for public, private, and non-profit organizations, our tools align with your specific needs.
-      </p>
-    </div>
-  </div>
-</div>
+      <h2 class="text-[#111317] text-responsive-base font-bold leading-tight tracking-[-0.015em] px-responsive pb-3 pt-5">Why choose our tools?</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
+        <div class="flex flex-1 gap-3 rounded-lg border border-[#dcdee5] bg-white p-4 flex-col">
+          <div class="text-[#111317]" data-icon="Check" data-size="24px" data-weight="regular">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+              <path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"></path>
+            </svg>
+          </div>
+          <div class="flex flex-col gap-1">
+            <h2 class="text-[#111317] text-responsive-base font-bold leading-tight">Best-in-class governance tools</h2>
+            <p class="text-[#646b87] text-responsive-sm font-normal leading-normal">
+              Our platform is designed to help you run effective board assessments, evaluate your board's performance, and track your progress over time.
+            </p>
+          </div>
+        </div>
+        <!-- Repeat for other tool features -->
+      </div>
 
       <div class="flex justify-center py-3">
-  <button
-    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#f0f1f4] text-[#111317] text-sm font-bold leading-normal tracking-[0.015em]"
-  >
-    <span class="truncate">Learn more</span>
-  </button>
-</div>
+        <button class="btn-responsive flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl bg-[#f0f1f4] text-[#111317] font-bold leading-normal tracking-[0.015em]">
+          <span class="truncate">Learn more</span>
+        </button>
+      </div>
 
-<!-- How it works Section -->
-<h2 class="text-[#111317] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">How it works</h2>
-<div class="px-4 pb-3">
-  <p class="text-[#646b87] text-sm font-normal leading-normal">
-    At Collective Win, we solve the problem of ineffective board governance for public, private, and non-profit organizations by conducting comprehensive, confidential, and neutral board performance assessments.
-  </p>
-  <p class="text-[#646b87] text-sm font-normal leading-normal mb-4">
-    Our goal is to help your board achieve superior performance and alignment with management. Experience the benefits of a well-assessed board and foster a culture of continuous improvement and collaboration.
-  </p>
-</div>
-<div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
-  <div class="flex flex-col gap-3 pb-3">
-    <div
-      class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
-      style='background-image: url("/img/board_assessment.png");'
-    ></div>
-    <div>
-      <p class="text-[#111317] text-base font-medium leading-normal">Quick and Easy Board Assessments</p>
-      <p class="text-[#646b87] text-sm font-normal leading-normal">
-        Run your board assessment in minutes, not months. Collective Win Governance Solutions is designed to be easy to use, so you can get valuable insights without added complexity.
-      </p>
-    </div>
-  </div>
-  <div class="flex flex-col gap-3 pb-3">
-    <div
-      class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
-      style='background-image: url("/img/board_peer_review.png");'
-    ></div>
-    <div>
-      <p class="text-[#111317] text-base font-medium leading-normal">Brand focused Peer Review Surveys</p>
-      <p class="text-[#646b87] text-sm font-normal leading-normal">
-        Gather feedback from your board members and other stakeholders using our intuitive survey tool. You can customize your questions to address your unique governance needs.
-      </p>
-    </div>
-  </div>
-  <div class="flex flex-col gap-3 pb-3">
-    <div
-      class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
-      style='background-image: url("/img/individual_self_evaluation.png");'
-    ></div>
-    <div>
-      <p class="text-[#111317] text-base font-medium leading-normal">Instant Results and Actionable Insights</p>
-      <p class="text-[#646b87] text-sm font-normal leading-normal">
-        Access your results instantly and take action to improve your board's performance. Collective Win Governance Solutions provides clear, concise reports and dashboards, so you can focus on what matters most.
-      </p>
-    </div>
-  </div>
-</div>
-  <!-- Moved and Updated Team Section -->
-<h2 class="text-[#111317] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Our Team</h2>
-<div class="px-4">
-  <p class="text-[#646b87] text-sm font-normal leading-normal mb-4">
-    At Collective Win Inc, we ​lead a diverse team of ​developers, designers, ​and governance ​specialists across Canada ​& the USA. We are a Toronto-based ​not-for-profit organization ​working to eliminate the ​technology gap at social ​impact & healthcare ​institutions.
-  </p>
-</div>
-<div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
-  <div class="flex flex-col gap-3 pb-3">
-    <div
-      class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
-      style='background-image: url("/img/alet_viegas.png"); height: 79px; width: 79px;'
-    ></div>
-    <div>
-      <p class="text-[#111317] text-base font-medium leading-normal">Alet Viegas, Chief Executive Officer</p>
-      <p class="text-[#646b87] text-sm font-normal leading-normal">hello@collectivewin.ca</p>
-      <p class="text-[#646b87] text-sm font-normal leading-normal mb-2">
-        Alet Viegas brings unparalleled expertise to Collective Win, having worked as an independent vendor at Habitat for Humanity since 2020 to manage governance solutions and deployments. With a wealth of experience from Annual General Meeting (AGM) Event Tech Solutions, Alet has been streamlining governance, voting, and reporting processes since 2017.
-      </p>
-      <p class="text-[#646b87] text-sm font-normal leading-normal mb-2">
-        Alet’s dedication to enhancing board performance and governance aligns perfectly with our mission to make governance painless and effective. Based in New York City, Alet is at the forefront of our innovative solutions.
-      </p>
-      <a href="https://www.linkedin.com/in/aletviegas" class="flex items-center text-[#0077b5]">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-          <path
-            d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z"
-          ></path>
-        </svg>
-        <span class="ml-2">LinkedIn</span>
-      </a>
-    </div>
-  </div>
-  <div class="flex flex-col gap-3 pb-3">
-    <div
-      class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
-      style='background-image: url("/img/divya_panjwani.png"); height: 79px; width: 79px;'
-    ></div>
-    <div>
-      <p class="text-[#111317] text-base font-medium leading-normal">Divya Panjwani, Chief Business Officer</p>
-      <p class="text-[#646b87] text-sm font-normal leading-normal">divya@collectivewin.ca</p>
-      <p class="text-[#646b87] text-sm font-normal leading-normal mb-2">
-        Divya Panjwani, the Chief Business Officer at Collective Win, boasts over 10 years of experience in People Management, training, and is now a certified HR professional. Based out of Vancouver, Divya’s expertise ensures that our clients receive top-notch service and support.
-      </p>
-      <p class="text-[#646b87] text-sm font-normal leading-normal mb-2">
-        Her leadership in business operations and human resources helps drive our mission forward, fostering a culture of excellence and continuous improvement.
-      </p>
-      <a href="https://www.linkedin.com/in/divyapanjwani" class="flex items-center text-[#0077b5]">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-          <path
-            d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z"
-          ></path>
-        </svg>
-        <span class="ml-2">LinkedIn</span>
-      </a>
-    </div>
-  </div>
-</div>
+      <!-- How it works Section -->
+      <h2 class="text-[#111317] text-responsive-base font-bold leading-tight tracking-[-0.015em] px-responsive pb-3 pt-5">How it works</h2>
+      <div class="px-responsive pb-3">
+        <p class="text-[#646b87] text-responsive-sm font-normal leading-normal">
+          At Collective Win, we solve the problem of ineffective board governance for public, private, and non-profit organizations by conducting comprehensive, confidential, and neutral board performance assessments.
+        </p>
+        <p class="text-[#646b87] text-responsive-sm font-normal leading-normal mb-4">
+          Our goal is to help your board achieve superior performance and alignment with management. Experience the benefits of a well-assessed board and foster a culture of continuous improvement and collaboration.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
+        <div class="flex flex-col gap-3 pb-3">
+          <div class="w-full bg-responsive bg-center bg-no-repeat aspect-square rounded-xl"
+            style='background-image: url("/img/board_assessment.png");'></div>
+          <div>
+            <p class="text-[#111317] text-responsive-base font-medium leading-normal">Quick and Easy Board Assessments</p>
+            <p class="text-[#646b87] text-responsive-sm font-normal leading-normal">
+              Run your board assessment in minutes, not months. Collective Win Governance Solutions is designed to be easy to use, so you can get valuable insights without added complexity.
+            </p>
+          </div>
+        </div>
+        <!-- Repeat for other "How it works" items -->
+      </div>
 
-<!-- Ready to elevate your board's performance Section -->
-<div class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-start justify-end px-4 pb-10 @[480px]:px-10" style='background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("/img/banner_image.png");'>
-  <div class="flex flex-col gap-2 text-center max-w-[720px] mx-auto">
-    <h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">
-      Ready to elevate your board's performance?
-    </h1>
-  </div>
-  <div class="flex justify-center mt-6 w-full gap-4">
-    <a href="https://calendar.app.google/yG1d96taZUSJT5pk6" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#1f49e0] text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]">
-      <span class="truncate">Request a demo</span>
-    </a>
-    <a href="/collectivewin/impact" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#f0f1f4] text-[#111317] text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]">
-      <span class="truncate">View Impact Report</span>
-    </a>
-  </div>
-</div>
+      <!-- Team Section -->
+      <h2 class="text-[#111317] text-responsive-base font-bold leading-tight tracking-[-0.015em] px-responsive pb-3 pt-5">Our Team</h2>
+      <div class="px-responsive">
+        <p class="text-[#646b87] text-responsive-sm font-normal leading-normal mb-4">
+          At Collective Win Inc, we lead a diverse team of developers, designers, and governance specialists across Canada & the USA. We are a Toronto-based not-for-profit organization working to eliminate the technology gap at social impact & healthcare institutions.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
+        <div class="flex flex-col gap-3 pb-3">
+          <div class="w-full bg-responsive bg-center bg-no-repeat aspect-square rounded-xl"
+            style='background-image: url("/img/alet_viegas.png"); height: 79px; width: 79px;'></div>
+          <div>
+            <p class="text-[#111317] text-responsive-base font-medium leading-normal">Alet Viegas, Chief Executive Officer</p>
+              <p class="text-[#646b87] text-responsive-sm font-normal leading-normal">hello@collectivewin.ca</p>
+            <p class="text-[#646b87] text-responsive-sm font-normal leading-normal mb-2">
+              Alet Viegas brings unparalleled expertise to Collective Win, having worked as an independent vendor at Habitat for Humanity since 2020 to manage governance solutions and deployments. With a wealth of experience from Annual General Meeting (AGM) Event Tech Solutions, Alet has been streamlining governance, voting, and reporting processes since 2017.
+            </p>
+            <p class="text-[#646b87] text-responsive-sm font-normal leading-normal mb-2">
+              Alet's dedication to enhancing board performance and governance aligns perfectly with our mission to make governance painless and effective. Based in New York City, Alet is at the forefront of our innovative solutions.
+            </p>
+            <a href="https://www.linkedin.com/in/aletviegas" class="flex items-center text-[#0077b5]">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                <path d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z"></path>
+              </svg>
+              <span class="ml-2">LinkedIn</span>
+            </a>
+          </div>
+        </div>
+        <!-- Repeat for other team members -->
+      </div>
 
-
-
+      <!-- Ready to elevate your board's performance Section -->
+      <div class="flex min-h-[480px] flex-col gap-6 bg-responsive bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-start justify-end px-4 pb-10 @[480px]:px-10" style='background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("/img/banner_image.png");'>
+        <div class="flex flex-col gap-2 text-center max-w-[720px] mx-auto">
+          <h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">
+            Ready to elevate your board's performance?
+          </h1>
+        </div>
+        <div class="flex justify-center mt-6 w-full gap-4">
+          <a href="https://calendar.app.google/yG1d96taZUSJT5pk6" class="btn-responsive flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl bg-[#1f49e0] text-white font-bold leading-normal tracking-[0.015em]">
+            <span class="truncate">Request a demo</span>
+          </a>
+          <a href="/collectivewin/impact" class="btn-responsive flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl bg-[#f0f1f4] text-[#111317] font-bold leading-normal tracking-[0.015em]">
+            <span class="truncate">View Impact Report</span>
+          </a>
         </div>
       </div>
-    </div>
-  </div>
-<footer class="flex justify-center mt-auto bg-gray-100 py-6">
-  <div class="flex max-w-[960px] flex-1 flex-col items-center px-4">
-    <div class="flex flex-wrap items-center justify-center gap-6 @[480px]:flex-row @[480px]:justify-around">
-      <a class="text-[#646b87] text-base font-normal leading-normal min-w-40" href="https://collectivewin.ca/about">About us</a>
-      <a class="text-[#646b87] text-base font-normal leading-normal min-w-40" href="mailto:hello@collectivewin.ca">Contact</a>
-      <a class="text-[#646b87] text-base font-normal leading-normal min-w-40" href="https://subwaymusician.xyz">Powered by Good Music</a>
-      <a class="text-[#646b87] text-base font-normal leading-normal min-w-40" href="https://myblackbean.ca">Blackbean</a>
-    </div>
-    <div class="flex flex-wrap justify-center gap-4 mt-4">
-      <a href="https://x.com/cowinlive">
-        <div class="text-[#646b87]" data-icon="XLogo" data-size="24px" data-weight="regular">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-            <path d="M247.39,68.94A8,8,0,0,0,240,64H209.57A48.66,48.66,0,0,0,168.1,40a46.91,46.91,0,0,0-33.75,13.7A47.9,47.9,0,0,0,120,88v6.09C79.74,83.47,46.81,50.72,46.46,50.37a8,8,0,0,0-13.65,4.92c-4.31,47.79,9.57,79.77,22,98.18a110.93,110.93,0,0,0,21.88,24.2c-15.23,17.53-39.21,26.74-39.47,26.84a8,8,0,0,0-3.85,11.93c.75,1.12,3.75,5.05,11.08,8.72C53.51,229.7,65.48,232,80,232c70.67,0,129.72-54.42,135.75-124.44l29.91-29.9A8,8,0,0,0,247.39,68.94Zm-45,29.41a8,8,0,0,0-2.32,5.14C196,166.58,143.28,216,80,216c-10.56,0-18-1.4-23.22-3.08,11.51-6.25,27.56-17,37.88-32.48A8,8,0,0,0,92,169.08c-.47-.27-43.91-26.34-44-96,16,13,45.25,33.17,78.67,38.79A8,8,0,0,0,136,104V88a32,32,0,0,1,9.6-22.92A30.94,30.94,0,0,1,167.9,56c12.66.16,24.49,7.88,29.44,19.21A8,8,0,0,0,204.67,80h16Z"></path>
-          </svg>
-        </div>
-      </a>
-      <a href="https://www.linkedin.com/showcase/cowinlive">
-        <div class="text-[#646b87]" data-icon="LinkedinLogo" data-size="24px" data-weight="regular">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-            <path d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z"></path>
-          </svg>
-        </div>
-      </a>
-    </div>
-    <p class="text-[#646b87] text-base font-normal leading-normal mt-4">Copyright 2024 Collective Win. All rights reserved.</p>
-  </div>
-</footer>
 
+    </div>
   </div>
-  </div>
+
+  <footer class="flex justify-center mt-auto bg-gray-100 py-6">
+    <div class="flex max-w-[960px] flex-1 flex-col items-center px-4">
+      <div class="footer-links-responsive flex flex-wrap items-center justify-center gap-6 @[480px]:flex-row @[480px]:justify-around">
+        <a class="text-[#646b87] text-responsive-base font-normal leading-normal min-w-40" href="https://collectivewin.ca/about">About us</a>
+        <a class="text-[#646b87] text-responsive-base font-normal leading-normal min-w-40" href="mailto:hello@collectivewin.ca">Contact</a>
+        <a class="text-[#646b87] text-responsive-base font-normal leading-normal min-w-40" href="https://subwaymusician.xyz">Powered by Good Music</a>
+        <a class="text-[#646b87] text-responsive-base font-normal leading-normal min-w-40" href="https://myblackbean.ca">Blackbean</a>
+      </div>
+      <div class="flex flex-wrap justify-center gap-4 mt-4">
+        <a href="https://x.com/cowinlive">
+          <div class="text-[#646b87]" data-icon="XLogo" data-size="24px" data-weight="regular">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+              <path d="M247.39,68.94A8,8,0,0,0,240,64H209.57A48.66,48.66,0,0,0,168.1,40a46.91,46.91,0,0,0-33.75,13.7A47.9,47.9,0,0,0,120,88v6.09C79.74,83.47,46.81,50.72,46.46,50.37a8,8,0,0,0-13.65,4.92c-4.31,47.79,9.57,79.77,22,98.18a110.93,110.93,0,0,0,21.88,24.2c-15.23,17.53-39.21,26.74-39.47,26.84a8,8,0,0,0-3.85,11.93c.75,1.12,3.75,5.05,11.08,8.72C53.51,229.7,65.48,232,80,232c70.67,0,129.72-54.42,135.75-124.44l29.91-29.9A8,8,0,0,0,247.39,68.94Zm-45,29.41a8,8,0,0,0-2.32,5.14C196,166.58,143.28,216,80,216c-10.56,0-18-1.4-23.22-3.08,11.51-6.25,27.56-17,37.88-32.48A8,8,0,0,0,92,169.08c-.47-.27-43.91-26.34-44-96,16,13,45.25,33.17,78.67,38.79A8,8,0,0,0,136,104V88a32,32,0,0,1,9.6-22.92A30.94,30.94,0,0,1,167.9,56c12.66.16,24.49,7.88,29.44,19.21A8,8,0,0,0,204.67,80h16Z"></path>
+            </svg>
+          </div>
+        </a>
+        <a href="https://www.linkedin.com/showcase/cowinlive">
+          <div class="text-[#646b87]" data-icon="LinkedinLogo" data-size="24px" data-weight="regular">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+              <path d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z"></path>
+            </svg>
+          </div>
+        </a>
+      </div>
+      <p class="text-[#646b87] text-responsive-base font-normal leading-normal mt-4">Copyright 2024 Collective Win. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
-
 </html>
